@@ -1,0 +1,17 @@
+
+/*Funciona para IE e Firefox*/
+body
+{
+    background:  #FBE1E1;
+}
+h1 {
+    color: black;
+    
+}
+/*Somente para Safari e Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    body { background-color: Red; }
+}
+
+

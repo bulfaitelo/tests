@@ -1,0 +1,10 @@
+body
+{
+    background: silver;
+}
+
+
+.styleRadio input, .styleCheckbox input { cursor:pointer; filter:alpha(opacity=0); opacity:0; } .styleRadio, .styleCheckbox { cursor:pointer; height:30px; background:url(controls.gif) no-repeat; } .styleRadio { background-position:0 -500px; } .styleCheckbox { background-position:0 0; }
+
+
+.inputRadioChecked { background-position:-500px -500px; } .inputCheckboxChecked { background-position:-500px 0; } .inputFocus { /* Este está genérico nos para radio e checkbox, mas também pode ser uma classe para cada */ border:dotted 1px #CCC; }
