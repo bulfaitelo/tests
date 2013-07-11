@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<meta name="author" content="MESMERiZE" />
+
+	<title>Untitled 1</title>
+</head>
+
+<body>
+
+<!--
+
+</a><form name="form1" method="post" action="">
+  <input name="periodo" id="periodo_sim" type="radio" value="sim" onclick="HabCampos()"/>Sim
+  <input name="periodo" id="periodo_nao" type="radio" value="nao" onclick="HabCampos()"/>N&atilde;o<br/><br/>
+    <select name="select1" >
+    <option  id="periodo_sim" value="sim" onclick="HabCampos()"> sim</option>
+    <option id="periodo_nao" value="nao" onclick="HabCampos()"> nao</option>    
+    </select>
+  <label id="c" style="display:none">Outros:<input type="text" name="textfield" id="textfield"/><br/><br/>
+  </label>
+
+</form>
+<br /><br /><br /><br /><br />
+-->
+
+
+<script language="javascript">
+function Habcampos () {
+  if (document.getElementById('outras').selected) {
+    document.getElementById('Selec_outros').style.display = "";
+document.getElementById('textfield').focus();
+  }
+  else {
+    document.getElementById('Selec_outros').style.display = "none";
+  }
+}
+</script>
+<form name="form" method="post" action="" >
+<select name='' >
+<option value="brasileira" id="brasleira" onclick="Habcampos()">br</option>
+<option value="outras"     id="outras"    onclick="Habcampos()">outras</option>
+
+</select>
+  <label id="Selec_outros" style="display:none">Outros:<input type="text" name="textfield" id="textfield"/>
+  </label>
+</form>
+
+
+
+
+
+<script language="javascript">
+function HabCampos() {
+  if (document.getElementById('periodo_sim').checked) {
+    document.getElementById('campos').style.display = "";
+document.getElementById('textfield').focus();
+  }
+  else {
+    document.getElementById('campos').style.display = "none";
+  }
+}
+</script>
+<br/>
+<form name="form1" method="post" action="">
+  <input name="periodo" id="periodo_sim" type="radio" value="sim" onClick="HabCampos()"/>Sim
+  <input name="periodo" id="periodo_nao" type="radio" value="nao" onClick="HabCampos()"/>N&atilde;o<br/><br/>
+  <label id="campos" style="display:none">
+  Nome:<input type="text" name="textfield" id="textfield"/><br/><br/>
+  <input name="checkbox1" type="checkbox" id="checkbox1" value="profissional"/>Profissional
+  <input type="checkbox" name="checkbox2" id="checkbox2" value="t&eacute;cnico"/>T&eacute;cnico
+  <input type="checkbox" name="checkbox3" id="checkbox3" value="Estagiario"/>Estagi&aacute;rio</label>
+</form>
+
+
+</body>
+</html>

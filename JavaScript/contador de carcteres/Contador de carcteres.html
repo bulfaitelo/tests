@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Contador de Caracteres  - www.vilourenco.com.br</title>
+
+<script type="text/javascript" language="javascript">
+
+/* 
+Funcoes para contar, exibir e limitar caracteres, by Vinícius Lourenço
+http://www.vilourenco.com.br - @vilourenco
+contato@vilourenco.com.br
+*/
+
+function mostrarResultado(box,num_max,campospan)
+{
+	var contagem_carac = box.length;
+}
+function contarCaracteres(box,valor,campospan){
+	var conta = valor - box.length;
+	document.getElementById(campospan).innerHTML = "Você ainda pode digitar " + conta + " caracteres";
+	if(box.length >= valor){
+		document.getElementById(campospan).innerHTML = "limite de carácteres excedido";
+		document.getElementById("campo").value = document.getElementById("campo").value.substr(0,valor);
+	}	
+}
+
+</script>
+</head>
+
+<body>
+<form action="" method="post">
+<textarea cols="45" id="campo" rows="5" onkeyup="mostrarResultado(this.value,20,'spcontando');contarCaracteres(this.value,20,'sprestante')"></textarea><br />
+
+<span id="sprestante" ></span><br />
+<span id="spcontando" ></span>
+</form>
+<br /><br />
+<span style="font-family:Georgia;font-size:11px;">by @vilourenco</span>
+
+</body>
+</html>
