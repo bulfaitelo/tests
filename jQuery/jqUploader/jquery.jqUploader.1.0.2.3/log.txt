@@ -1,0 +1,12 @@
+Array
+(
+    [Filedata] => Array
+        (
+            [name] => 47361_570288836321693_2031967904_n.jpg
+            [type] => application/octet-stream
+            [tmp_name] => /tmp/phpyeIhdO
+            [error] => 0
+            [size] => 124509
+        )
+
+)
