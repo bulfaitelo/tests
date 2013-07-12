@@ -9,7 +9,7 @@
 </ul>
 
 <strong> Meu blog </strong>
-<a href='bulfaitelo.net' target='_blank' > bulfaitelo.net </a>
+<a href='http://bulfaitelo.net' target='_blank' > bulfaitelo.net </a>
 
 
 Sempre Estarei atualizando :)
