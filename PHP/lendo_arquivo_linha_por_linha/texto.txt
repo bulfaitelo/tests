@@ -1,0 +1,33 @@
+
+    /*******************************************************************
+    
+     ---VISTORIAS 
+    
+    /******************************************************************/
+    
+
+select emb_vistoria.id_embarcacao, emb_embarcacao.numero_inscricao, emb_vistoria.data, emb_vistoria.id_tipo_vistoria, 
+    emb_embarcacao.nome as nome_embarcacao, pes_pessoa.nome as nome_vistoriador, emb_vistoria.local, emb_embarcacao.tipo_embarcacao, 
+    emb_embarcacao.id_cod_pais_bandeira, emb_vistoria.id_vistoria 
+    
+    from emb_embarcacao, emb_vistoria, pes_pessoa
+    
+    where emb_vistoria.id_embarcacao=emb_embarcacao.id_embarcacao and emb_vistoria.id_vistoriador=pes_pessoa.id_pessoa
+  
+    and data between '2011-2-01' and '2011-2-31' order by data
+	
+	
+	/*******************************************************************
+    
+     ---CERTIFICADOS 
+    
+    /******************************************************************/
+	
+	select emb_certificado.id_certificado, emb_embarcacao.numero_inscricao, emb_certificado.emissao, emb_certificado.validade, emb_certificado.id_nome_certificado, 
+    emb_embarcacao.nome as nome_embarcacao, emb_certificado.numero_termo_vistoria 
+    
+    from emb_embarcacao, emb_certificado
+    
+    where emb_certificado.id_embarcacao=emb_embarcacao.id_embarcacao 
+   
+    and emissao between '2011-2-01' and '2011-2-31' order by emissao

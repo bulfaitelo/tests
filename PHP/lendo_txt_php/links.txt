@@ -1,0 +1,2 @@
+http://sergionovelli.eti.br/blog/2011/04/lendo-e-escrevendo-arquivos-de-texto-txt-com-php/
+
