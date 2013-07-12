@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<head>
+<title>Upload progress bar</title>
+<Script language="JavaScript" type="text/javascript">
+function changeValue(id,value)
+{
+  if(id && document.getElementById(id))
+  {
+      document.getElementById(id).innerHTML = value;
+  }
+}
+
+function SP(cursize,time,speed,files,left)
+{
+    var percent = parseInt(100*parseFloat(cursize)/parseFloat(<TMPL_VAR data_total>));
+    document.getElementById('upload_status').style.width = percent+'%';
+    changeValue('percent', percent+'%' );
+	changeValue('current',cursize);
+	changeValue('speed',speed);
+	changeValue('time', convertSeconds(time) );
+	changeValue('left', convertSeconds(left) );
+}
+
+function convertSeconds(seconds)
+{
+	hours = parseInt(seconds/36000);
+	mins  = parseInt(seconds/60);
+	secs  = seconds - hours*3600 - mins*60;
+	if(hours<10){ hours = '0'+hours; }
+	if(mins<10){ mins  = '0'+mins; }
+	if(secs<10){ secs  = '0'+secs; }
+	return hours+':'+mins+':'+secs;
+}
+
+function Message(msg)
+{
+	document.getElementById('message').innerHTML += msg+'<br>';
+	window.scrollBy(0,550);
+}
+</Script>
+<Style type="text/css">
+body  {background-color:#FFFFFF;font: 12px Arial;margin:3px 3px 3px 3px;text-align:center;}
+.data {background-color: #f0f0f0; border: 1px solid #898989; margin-bottom: 5px;}
+.data TR TD {background-color: #e3e3e3; font: 12px Arial;}
+.bar1 {border: 1px solid #a3a3a3; background-color: #f6f6f6; text-align: left; vertical-align: middle; height: 20px;}
+.bar2 {width: 1%; background-color: #c9c9c9; height: 100%; text-align: left;}
+.message {font: 12px Arial; top-margin: 7px;}
+.myLink  {font: bold 13 px Arial; color: #303030; text-decoration: none;}
+</Style>
+</head>
+
+<BODY>
+<div class="bar1" align=left><div class="bar2" id="upload_status"></div></div>
+
+<a href="http://www.sibsoft.net/xupload.html" style="font: 11px Arial;color: #a3a3a3;text-decoration:none;">Powered by XUpload</a>
+<br>
+<Table cellpadding=2 cellspacing=1 class="data">
+<TR>
+   <TD width="1%" nowrap><b>Upload complete:</b></TD>
+   <TD align=center><TMPL_VAR percent_completed></TD>
+</TR>
+<TR>
+   <TD><b>Current position:</b></TD>
+   <TD align=center><TMPL_VAR data_uploaded> / <TMPL_VAR data_total> Kbytes</TD>
+</TR>
+<TR>
+   <TD><b>Time spent:</b></TD>
+   <TD align=center><TMPL_VAR time_spent></TD>
+</TR>
+<TR>
+   <TD><b>Approx. speed:</b></TD>
+   <TD align=center><TMPL_VAR speed> Kbytes/Sec.</TD>
+</TR>
+<TR>
+   <TD><b>Time left:</b></TD>
+   <TD align=center><TMPL_VAR time_left></TD>
+</TR>
+</Table>
+
+<font class="message" id="message"></font>
+
+<br>
+<a href="javascript: window.close();" class="myLink">- Close -</a>
+<br>
+
+</BODY>
+</HTML>
